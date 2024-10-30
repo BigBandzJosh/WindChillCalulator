@@ -8,9 +8,6 @@ class Temperature:
     def convert_to_celsius(self):
         return (self.temperature - 32) * 5/9
     
-
-
-
 class WindSpeed:
     def __init__(self, wind_speed):
         self.wind_speed = wind_speed
@@ -27,7 +24,7 @@ def WindChill(temperature, wind_speed):
     wind_speed = WindSpeed(wind_speed)
 
     temp = temperature.temperature
-    wind_speed = wind_speed.convert_to_kmh()
+    wind_speed = wind_speed.wind_speed
 
     if temp <= 0 and wind_speed >= 5:
         windchill = 13.12 + 0.6215 * temp - 11.37 * wind_speed**0.16 + 0.3965 * temp * wind_speed**0.16
