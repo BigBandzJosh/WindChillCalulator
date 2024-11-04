@@ -48,17 +48,19 @@ def WindChill(temperature, wind_speed, temp_unit='C', speed_unit='kmh'):
         return None
     
 # Example usage
-temperature = 10
-wind_speed = 0.539957
 
-print(WindChill(temperature, wind_speed, 'C', 'knots'))
-print(WindChill(-10, 0.539957, 'C', 'knots'))
-print(WindChill(14, 1, 'F', 'kmh'))
-print(WindChill(-10, 6, 'C', 'kmh'))
-print(WindChill(-10, 1, 'C', 'kmh'))
-
-
-
-
+with open("en_climate_daily_NS_8205092_2023_P1D.csv", "r") as file:
+    header = file.readline()
+    print(header)
+    for line in file:
+        maxtemp = line.split(",")[9].strip('"')
+        gustSpeed = line.split(",")[29].strip('"')
+        if maxtemp == "" or gustSpeed == "":
+            print("No data")
+        else:
+            maxtemp = float(maxtemp)
+            gustSpeed = float(gustSpeed)
+        
+            print(WindChill(maxtemp, gustSpeed, 'C', 'kmh'))
 
   
