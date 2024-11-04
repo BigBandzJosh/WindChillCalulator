@@ -49,6 +49,10 @@ def WindChill(temperature, wind_speed, temp_unit='C', speed_unit='kmh'):
     
 # Example usage
 
+# Data source: Environment and Climate Change Canada. https://climate.weather.gc.ca/climate_data/daily_data_e.html?hlyRange=2008-06-26%7C2023-10-17&dlyRange=2008-07-02%7C2023-10-16&mlyRange=%7C&StationID=47187&Prov=NS&urlExtension=_e.html&searchType=stnName&optLimit=yearRange&StartYear=1840&EndYear=2023&selRowPerPage=25&Line=4&searchMethod=contains&Month=9&Day=17&txtStationName=shearwater&timeframe=2&Year=2023
+
+# Data file: en_climate_daily_NS_8205092_2023_P1D.csv
+
 with open("en_climate_daily_NS_8205092_2023_P1D.csv", "r") as file:
     header = file.readline()
     print(header)
