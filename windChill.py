@@ -54,17 +54,24 @@ def WindChill(temperature, wind_speed, temp_unit='C', speed_unit='kmh'):
 # Data file: en_climate_daily_NS_8205092_2023_P1D.csv
 
 with open("en_climate_daily_NS_8205092_2023_P1D.csv", "r") as file:
+    
     header = file.readline()
     print(header)
+
     for line in file:
         maxtemp = line.split(",")[9].strip('"')
         gustSpeed = line.split(",")[29].strip('"')
+
         if maxtemp == "" or gustSpeed == "":
-            print("No data")
+            print("Missing data")
+
         else:
             maxtemp = float(maxtemp)
             gustSpeed = float(gustSpeed)
-        
             print(WindChill(maxtemp, gustSpeed, 'C', 'kmh'))
+
+print("Processed", len(line), "lines")
+
+            
 
   
