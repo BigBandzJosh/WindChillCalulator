@@ -63,7 +63,8 @@ with open("en_climate_daily_NS_8205092_2023_P1D.csv", "r") as file:
         gustSpeed = line.split(",")[29].strip('"')
 
         if maxtemp == "" or gustSpeed == "":
-            print("Missing data")
+            continue
+            
 
         else:
             maxtemp = float(maxtemp)
